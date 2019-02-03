@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    {% include 'include/head.html' %}
+</head>
+<body data-spy="scroll">
+
+{% block content %}{% endblock content %}
+
+     {% include 'include/script.html' %}
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+    $(".banner-inner, .newsletter-home-text").css("opacity", 1 - $(window).scrollTop() / 350);
+  });
+//parallax
+    if (!Modernizr.touch) {
+        $('.home-newsletter').parallax("50%", 0.5);
+           $('.home-contact').parallax("50%", 0.5);
+    }
+    //backstretch background slideshow using for banner intro
+    $('.banner-slider').backstretch([
+        {% for slide in context.background %}
+        {% for file in slide.background.all %}
+        "{{ file.file.url }}",
+        {% endfor %}
+        {% endfor %}
+    ], {
+        fade: 750,
+        duration: 3000
+    });
+    });
+</script>
+</body>
+</html>

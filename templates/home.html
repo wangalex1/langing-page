@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+
+ <header class="navbar navbar-default header-v2 navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header scroll-to">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">ДизКом</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+
+                    <ul class="nav scroll-to navbar-nav">
+                        <li class="active"><a href="#home">О компании </a></li>
+                        <li><a href="#features">Услуги </a></li>
+                        <li><a href="#pricing">Специальные предложения</a></li>
+                        <li><a href="#contact">Контакты  </a></li>
+
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right socials">
+                         <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </header><!--navigation end here-->
+ <section id="home" class="banner-intro banner-slider">
+            <div class="banner-inner">
+                <div class="container">
+                    <div class="row">
+                       <div class="col-sm-8  col-sm-offset-2 text-center wow animated bounceIn">
+                            <!-- <p class="lead">
+                                A Beautiful and simplest way to build your next landing page.
+                            </p> -->
+                            <div class="scroll-to banner-buttons">
+                                <a href="#features" class="btn btn-lg btn-skin btn-radius">Узнать больше<i class="fa fa-angle-down"></i></a>
+                                <!-- <a  data-toggle="modal" data-target="#video-popup" class="btn btn-lg btn-radius btn-white">Watch video<i class="fa fa-youtube-play"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% include 'include/features.html' %}
+    {% include 'include/gallery.html' %}
+    {% include 'include/pricing.html' %}
+    {% include 'include/services.html' %}
+    {% include 'include/contact_form.html' %}
+    {% include 'include/footer.html' %}
+
+
+{% endblock %}

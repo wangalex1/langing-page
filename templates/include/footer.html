@@ -1,0 +1,58 @@
+<!--footer start-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    {% for text in context.contact %}
+                    <div class="col-sm-4 margin-b-30">
+                        <h2>{{ text.title }}</h2>
+                        <p>
+                            {{ text.description }}
+                        </p>
+                        <div class="space-20"></div>
+                        <a href='#' target="_blank" class="btn btn-skin btn-radius btn-lg"> Написать нам </a>
+                    </div>
+                     <div class="col-sm-4 margin-b-30">
+                        <h2>Связаться с нами </h2>
+                        <ul class="list-unstyled clearfix">
+                            <li class="clearfix">
+                                <i class="fa fa-map-marker"></i>
+                                <span>{{ text.address }}</span>
+                            </li>
+                             <li class="clearfix">
+                                <i class="fa fa-envelope-o"></i>
+                                <span><a href='#'>{{ text.email }}</a></span>
+                            </li>
+                             <li class="clearfix">
+                                <i class="fa fa-phone"></i>
+                                <span>{{ text.number }}</span>
+                            </li>
+                        </ul>
+                    </div><!--col4 end-->
+                    {% endfor %}
+                     <div class="col-sm-4 margin-b-30">
+                        <h2>Написать нам в соц. сетях  </h2>
+                        <ul class="list-inline clearfix">
+                            <li><a href='#'><i class="fa fa-facebook-official"></i></a></li>
+                            <li><a href='#'><i class="fa fa-twitter"></i></a></li>
+                            <li><a href='#'><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href='#'><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href='#'><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div><!--col4 end-->
+                </div><!--row end-->
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="footer-bottom">
+                             <ul class="list-inline">
+                            <li><a href='#'>О компании</a></li>
+                            <li><a href='#'>Новости </a></li>
+                            <li><a href='#'>Помощь</a></li>
+                            <!-- <li><a href='#'>Privacy</a></li> -->
+                        </ul>
+                        <span>&copy; Copyright 2018. Orginal Design by Diskom </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer end-->

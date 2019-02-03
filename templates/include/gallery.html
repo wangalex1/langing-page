@@ -1,0 +1,37 @@
+{% load staticfiles %}
+
+ <!--gallery-->
+        <section class="gallery-container">
+            <div class="container">
+             {% for post in context.gallery %}
+                  <div class="row">
+
+                    <div class="col-sm-8 col-sm-offset-2 center-title">
+                        <i class="{{ post.icons }}"></i>
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ post.text_post }}</p>
+                    </div>
+
+                </div><!--center title row end-->
+                <div class="row">
+                    {% for file in post.image_post.all %}
+                    <div class="col-sm-4">
+                        <div class="gallery">
+                            <img src="{{ PORTAL_URL }}{{ file.file.url }}" alt="{{ file.seo_alt }}" class="img-responsive">
+                            <div class="gallery-overlay">
+                                <a href="{{ PORTAL_URL }}{{ file.file.url }}" data-lightbox="gallery">
+                                    <i class="icon-expand"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div><!--col end-->
+                    {% endfor %}
+                </div>
+            {% endfor %}
+                <div class="space-40"></div>
+                <div class="text-center">
+                    <a href="#" class="btn btn-radius btn-dark btn-lg">Узнать больше </a>
+                </div>
+            </div>
+        </section>
+        <!--end gallery-->
