@@ -12,4 +12,4 @@ templates/themes_markup/*
 */migrations/*
 .git-old/
 channels_panel/
-assets/
+myvenv/
