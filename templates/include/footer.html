@@ -6,17 +6,17 @@
                     <div class="col-sm-4 margin-b-30">
                         <h2>{{ text.title }}</h2>
                         <p>
-                            {{ text.description }}
+                            {{ text.description|safe }}
                         </p>
                         <div class="space-20"></div>
-                        <a href='#' target="_blank" class="btn btn-skin btn-radius btn-lg"> Написать нам </a>
+                        <a href='#contact' class="btn btn-skin btn-radius btn-lg">Написать нам </a>
                     </div>
                      <div class="col-sm-4 margin-b-30">
                         <h2>Связаться с нами </h2>
                         <ul class="list-unstyled clearfix">
                             <li class="clearfix">
                                 <i class="fa fa-map-marker"></i>
-                                <span>{{ text.address }}</span>
+                                <span>{{ text.address|safe }}</span>
                             </li>
                              <li class="clearfix">
                                 <i class="fa fa-envelope-o"></i>
@@ -29,6 +29,7 @@
                         </ul>
                     </div><!--col4 end-->
                     {% endfor %}
+                    {% comment %}
                      <div class="col-sm-4 margin-b-30">
                         <h2>Написать нам в соц. сетях  </h2>
                         <ul class="list-inline clearfix">
@@ -39,6 +40,7 @@
                             <li><a href='#'><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div><!--col4 end-->
+                    {% endcomment %}
                 </div><!--row end-->
                 <div class="row">
                     <div class="col-sm-12 text-center">

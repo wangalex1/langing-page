@@ -86,6 +86,8 @@ DATABASES = {
 }
 
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -139,3 +141,5 @@ STATICFILES_FINDERS = (
 MEDIA_ROOT = os.path.join(BASE_DIR,  'static/media/')
 
 MEDIA_URL = '/media/'
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Ldjl48UAAAAAAbsP3iqtNu8JPW-P_laP-a20iVr'

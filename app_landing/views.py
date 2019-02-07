@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from .forms import MessagesForm
+from .decorators import check_recaptcha
+from django.contrib import messages
 
 # Create your views here.
 
@@ -23,3 +26,18 @@ def landing(request):
     context['background'] = Slider.objects.all()
     context['contact'] = Contact.objects.all()
     return render(request, 'home.html', {'context': context})
+
+
+@check_recaptcha
+def messages_info(request):
+    if request.method == 'POST':
+        form = MessagesForm(request.POST)
+        if form.is_valid() and request.recaptcha_is_valid:
+            form.save()
+            messages.success(request, 'Ваше сообщение сохранено и в ближайшее время будет расмотренно менеджером')
+            return redirect('/')
+        else:
+            messages.info(request, 'Проверьте корректность заполнения данных')
+            return redirect('/')
+    else:
+        return redirect('/')

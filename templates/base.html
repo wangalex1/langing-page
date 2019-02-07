@@ -12,8 +12,17 @@
      {% include 'include/script.html' %}
 <script>
     $(document).ready(function(){
+        if($('.system.messages').length == 0 ){
+            return;
+        }
+        let  t = $('.system.messages').find('div:first').data('tags'),
+            _html = $('.system.messages').html();
+        swal({
+            html: _html
+        });
         $(window).scroll(function(){
     $(".banner-inner, .newsletter-home-text").css("opacity", 1 - $(window).scrollTop() / 350);
+
   });
 //parallax
     if (!Modernizr.touch) {

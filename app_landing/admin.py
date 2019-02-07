@@ -28,6 +28,10 @@ class LabelAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'slug', 'seo_description', 'created', 'updated']
 
 
+class MessagesAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'message']
+
+
 admin.site.register(Images, ImagesAdmin)
 admin.site.register(Post, PostAdmin)
 admin.site.register(Price, PriceAdmin)
@@ -36,3 +40,4 @@ admin.site.register(SubPost)
 admin.site.register(Services)
 admin.site.register(Slider)
 admin.site.register(Contact)
+admin.site.register(Messages, MessagesAdmin)

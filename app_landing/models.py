@@ -129,3 +129,17 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Messages(models.Model):
+
+    class Meta:
+        verbose_name = u'Сообщение с сайта'
+        verbose_name_plural = 'Сообщения с сайта'
+
+    email = models.EmailField(max_length=120, blank=True, null=True, verbose_name='Email пользователя')
+    name = models.CharField(max_length=250, blank=True, null=True, verbose_name='Имя пользователя')
+    message = models.TextField(blank=True, null=True, verbose_name='Сообщение')
+
+    def __str__(self):
+        return self.name

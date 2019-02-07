@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
+                        {% if messages %}
+                            <div class="system messages" style="display: none;">
+                                {% for message in messages %}
+                                    <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert" data-tags="{{ message.tags }}">
+                                        <!--
+                                        <button type="button" class="close" data-dismiss="alert"
+                                                aria-hidden="true">&times;</button> -->
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
 
  <header class="navbar navbar-default header-v2 navbar-fixed-top">
             <div class="container">
@@ -23,9 +35,12 @@
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right socials">
+                        <li><a href="javascript:void(0);" style="font-size: 22px;"><i class="icon-phone"></i>&nbsp;&nbsp;&nbsp;+7(925)616-6289</a></li>
+                        {% comment %}
                          <li><a href="#"><i class="icon-facebook"></i></a></li>
                         <li><a href="#"><i class="icon-twitter"></i></a></li>
                         <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                        {% endcomment %}
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
@@ -38,10 +53,12 @@
                             <!-- <p class="lead">
                                 A Beautiful and simplest way to build your next landing page.
                             </p> -->
+                           {% comment %}
                             <div class="scroll-to banner-buttons">
                                 <a href="#features" class="btn btn-lg btn-skin btn-radius">Узнать больше<i class="fa fa-angle-down"></i></a>
                                 <!-- <a  data-toggle="modal" data-target="#video-popup" class="btn btn-lg btn-radius btn-white">Watch video<i class="fa fa-youtube-play"></i></a> -->
                             </div>
+                            {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -49,7 +66,9 @@
         </section>
     {% include 'include/features.html' %}
     {% include 'include/gallery.html' %}
+    {% comment %}
     {% include 'include/pricing.html' %}
+    {% endcomment %}
     {% include 'include/services.html' %}
     {% include 'include/contact_form.html' %}
     {% include 'include/footer.html' %}

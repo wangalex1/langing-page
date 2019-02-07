@@ -7,9 +7,12 @@
                   <div class="row">
 
                     <div class="col-sm-8 col-sm-offset-2 center-title">
+                        {% comment %}
                         <i class="{{ post.icons }}"></i>
-                        <h2>{{ post.title }}</h2>
-                        <p>{{ post.text_post }}</p>
+                        {% endcomment %}
+                        <h3>{{ post.title }}</h3>
+                        <div class="space-20"></div>
+                        {{ post.text_post|safe }}
                     </div>
 
                 </div><!--center title row end-->
@@ -28,10 +31,12 @@
                     {% endfor %}
                 </div>
             {% endfor %}
-                <div class="space-40"></div>
+             <div class="space-40"></div>
+            {% comment %}
                 <div class="text-center">
                     <a href="#" class="btn btn-radius btn-dark btn-lg">Узнать больше </a>
                 </div>
+                {% endcomment %}
             </div>
         </section>
         <!--end gallery-->
