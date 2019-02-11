@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     {% for text in context.contact %}
-                    <div class="col-sm-4 margin-b-30">
+                    <div class="col-sm-3 margin-b-30">
                         <h2>{{ text.title }}</h2>
                         <p>
                             {{ text.description|safe }}
@@ -11,7 +11,7 @@
                         <div class="space-20"></div>
                         <a href='#contact' class="btn btn-skin btn-radius btn-lg">Написать нам </a>
                     </div>
-                     <div class="col-sm-4 margin-b-30">
+                     <div class="col-sm-3 margin-b-30">
                         <h2>Связаться с нами </h2>
                         <ul class="list-unstyled clearfix">
                             <li class="clearfix">
@@ -29,8 +29,10 @@
                         </ul>
                     </div><!--col4 end-->
                     {% endfor %}
-                    {% comment %}
-                     <div class="col-sm-4 margin-b-30">
+
+                     <div class="col-sm-6 margin-b-30">
+                         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9b2ddb1506d7f264170b8517d70c8202438f51460e0c4f3fd23d97de420e1795&amp;width=550&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+                          {% comment %}
                         <h2>Написать нам в соц. сетях  </h2>
                         <ul class="list-inline clearfix">
                             <li><a href='#'><i class="fa fa-facebook-official"></i></a></li>
@@ -39,8 +41,9 @@
                             <li><a href='#'><i class="fa fa-linkedin"></i></a></li>
                             <li><a href='#'><i class="fa fa-youtube"></i></a></li>
                         </ul>
+                        {% endcomment %}
                     </div><!--col4 end-->
-                    {% endcomment %}
+
                 </div><!--row end-->
                 <div class="row">
                     <div class="col-sm-12 text-center">

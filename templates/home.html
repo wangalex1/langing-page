@@ -28,8 +28,8 @@
 
                     <ul class="nav scroll-to navbar-nav">
                         <li class="active"><a href="#home">О компании </a></li>
-                        <li><a href="#features">Услуги </a></li>
-                        <li><a href="#pricing">Специальные предложения</a></li>
+                        <li><a href="#services">Услуги </a></li>
+                        <!--<li><a href="#pricing">Специальные предложения</a></li>-->
                         <li><a href="#contact">Контакты  </a></li>
 
 
@@ -49,27 +49,25 @@
             <div class="banner-inner">
                 <div class="container">
                     <div class="row">
-                       <div class="col-sm-8  col-sm-offset-2 text-center wow animated bounceIn">
-                            <!-- <p class="lead">
-                                A Beautiful and simplest way to build your next landing page.
-                            </p> -->
-                           {% comment %}
-                            <div class="scroll-to banner-buttons">
-                                <a href="#features" class="btn btn-lg btn-skin btn-radius">Узнать больше<i class="fa fa-angle-down"></i></a>
-                                <!-- <a  data-toggle="modal" data-target="#video-popup" class="btn btn-lg btn-radius btn-white">Watch video<i class="fa fa-youtube-play"></i></a> -->
-                            </div>
-                            {% endcomment %}
+                       <div class="col-sm-8  col-sm-offset-2 text-center wow animated bounceIn" id="slider">
+
+                            {% for slide in context.background %}
+                                   {% for file in slide.background.all %}
+                                       <img class="mySlides w3-animate-fading" src="{{ file.file.url }}" style="width:100%">
+                                     {% endfor %}
+                            {% endfor %}
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    {% include 'include/features.html' %}
+    {% include 'include/services.html' %}
     {% include 'include/gallery.html' %}
     {% comment %}
+    {% include 'include/features.html' %}
     {% include 'include/pricing.html' %}
     {% endcomment %}
-    {% include 'include/services.html' %}
     {% include 'include/contact_form.html' %}
     {% include 'include/footer.html' %}
 

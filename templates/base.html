@@ -20,17 +20,12 @@
         swal({
             html: _html
         });
+        {% comment %}
         $(window).scroll(function(){
     $(".banner-inner, .newsletter-home-text").css("opacity", 1 - $(window).scrollTop() / 350);
 
-  });
-//parallax
-    if (!Modernizr.touch) {
-        $('.home-newsletter').parallax("50%", 0.5);
-           $('.home-contact').parallax("50%", 0.5);
-    }
-    //backstretch background slideshow using for banner intro
-    $('.banner-slider').backstretch([
+    });
+        $('.banner-slider').backstretch([
         {% for slide in context.background %}
         {% for file in slide.background.all %}
         "{{ file.file.url }}",
@@ -40,7 +35,29 @@
         fade: 750,
         duration: 3000
     });
+    {% endcomment %}
+//parallax
+    if (!Modernizr.touch) {
+        $('.home-newsletter').parallax("50%", 0.5);
+           $('.home-contact').parallax("50%", 0.5);
+    }
+    //backstretch background slideshow using for banner intro
+
     });
+     let myIndex = 0;
+carousel();
+
+function carousel() {
+  let i;
+  let x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 9000);
+}
 </script>
 </body>
 </html>
