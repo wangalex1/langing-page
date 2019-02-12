@@ -1,0 +1,13 @@
+*.pyc
+*.pyo
+*.db
+.DS_Store
+.coverage
+local_settings.py
+.idea/
+django/
+log/celerybeat/*
+templates/themes_markup/*
+*/migrations/*
+.git-old/
+channels_panel/

@@ -1,0 +1,63 @@
+<!--footer start-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    {% for text in context.contact %}
+                    <div class="col-sm-3 margin-b-30">
+                        <h2>{{ text.title }}</h2>
+                        <p>
+                            {{ text.description|safe }}
+                        </p>
+                        <div class="space-20"></div>
+                        <a href='#contact' class="btn btn-skin btn-radius btn-lg">Написать нам </a>
+                    </div>
+                     <div class="col-sm-3 margin-b-30">
+                        <h2>Связаться с нами </h2>
+                        <ul class="list-unstyled clearfix">
+                            <li class="clearfix">
+                                <i class="fa fa-map-marker"></i>
+                                <span>{{ text.address|safe }}</span>
+                            </li>
+                             <li class="clearfix">
+                                <i class="fa fa-envelope-o"></i>
+                                <span><a href='#'>{{ text.email }}</a></span>
+                            </li>
+                             <li class="clearfix">
+                                <i class="fa fa-phone"></i>
+                                <span>{{ text.number }}</span>
+                            </li>
+                        </ul>
+                    </div><!--col4 end-->
+                    {% endfor %}
+
+                     <div class="col-sm-6 margin-b-30">
+                         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9b2ddb1506d7f264170b8517d70c8202438f51460e0c4f3fd23d97de420e1795&amp;width=550&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+                          {% comment %}
+                        <h2>Написать нам в соц. сетях  </h2>
+                        <ul class="list-inline clearfix">
+                            <li><a href='#'><i class="fa fa-facebook-official"></i></a></li>
+                            <li><a href='#'><i class="fa fa-twitter"></i></a></li>
+                            <li><a href='#'><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href='#'><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href='#'><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                        {% endcomment %}
+                    </div><!--col4 end-->
+
+                </div><!--row end-->
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="footer-bottom">
+                             <ul class="list-inline">
+                            <li><a href='#'>О компании</a></li>
+                            <li><a href='#'>Новости </a></li>
+                            <li><a href='#'>Помощь</a></li>
+                            <!-- <li><a href='#'>Privacy</a></li> -->
+                        </ul>
+                        <span>&copy; Copyright 2018. Orginal Design by Diskom </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer end-->

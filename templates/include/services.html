@@ -1,0 +1,88 @@
+{% load staticfiles %}
+
+<!--services-->
+        <section id="services" class="services-section">
+             <div class="container">
+                <div class="row">
+                    {% for post in context.service_post %}
+                    <div class="col-sm-10 col-sm-offset-2 center-title">
+                        <i class="icon-bike"></i>
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.text_post }}</p>
+                    </div>
+                    {% endfor %}
+                </div><!--center title row end-->
+             </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <ul class="list-inline text-center tabs-navigation" role="tablist">
+                            {% for service in context.services %}
+                            <li role="presentation" {% if service.index == 1 %}class="active"{% endif %}>
+                                <a href="#{{ service.slug }}" aria-controls="{{ service.slug }}" role="tab" data-toggle="tab"><span><i class="{{ service.icons }}"></i></span>{{ service.title }}</a>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div><!--tabs header row end-->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="tab-content service-tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="{{ context.service_1.slug }}">
+                                <div class="row vertical-align-child">
+
+                                     <div class="col-sm-6 hidden-xs animated fadeInLeft">
+                                         <img src="{% for file in context.service_1.image_service.all %}{{ PORTAL_URL }}{{ file.file.url }}" alt="{{ file.seo_alt }}" {% endfor %}class="img-responsive">
+                                     </div>
+                                     <div class="col-sm-5 col-sm-offset-1 text-left animated fadeInUp">
+                                         <h1>{{ context.service_1.title }}</h1>
+                                         <p>
+                                             {{ context.service_1.description }}
+                                         </p>
+                                    </div>
+                                </div>
+                            </div><!--tab content end-->
+                             <div role="tabpanel" class="tab-pane" id="responsive">
+                                 <div class="row vertical-align-child">
+                                    <div class="col-sm-5 col-sm-offset-1 text-left animated fadeInUp">
+                                         <h1>{{ context.service_2.title }}</h1>
+                                         <p>
+                                             {{ context.service_2.description }}
+                                         </p>
+                                    </div>
+                                     <div class="col-sm-6 hidden-xs animated fadeInRight">
+                                         <img src="{% for file in context.service_2.image_service.all %}{{ PORTAL_URL }}{{ file.file.url }}" alt="{{ file.seo_alt }}" {% endfor %}class="img-responsive">
+                                     </div>
+                                </div>
+                            </div><!--tab content end-->
+                              <div role="tabpanel" class="tab-pane" id="develop">
+                                 <div class="row vertical-align-child">
+
+                                     <div class="col-sm-6 hidden-xs animated fadeInLeft">
+                                         <img src="{% for file in context.service_3.image_service.all %}{{ PORTAL_URL }}{{ file.file.url }}" alt="{{ file.seo_alt }}" {% endfor %}class="img-responsive">
+                                     </div>
+                                     <div class="col-sm-5 col-sm-offset-1 text-left animated fadeInUp">
+                                         <h1>{{ context.service_3.title }}</h1>
+                                         <p>
+                                             {{ context.service_3.description }}
+                                         </p>
+                                    </div>
+                                </div>
+                            </div><!--tab content end-->
+                              <div role="tabpanel" class="tab-pane" id="seo">
+                                  <div class="row">
+                                    <div class="col-sm-6 col-sm-offset-3 text-center animated fadeInUp">
+                                         <h1>SEO</h1>
+                                         <p>
+                                             {{ context.service_4.description }}
+                                         </p>
+                                    </div>
+                                </div>
+                            </div><!--tab content end-->
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+        <!--end services-->

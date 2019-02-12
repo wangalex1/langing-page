@@ -1,0 +1,49 @@
+ <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 center-title">
+                        <i class="icon-envelope"></i>
+                        <h2>Написать нам </h2>
+                        <!-- <p>Feel free to ask any questions.</p> -->
+                    </div>
+                </div><!--center title row end-->
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                <form method="post" action="/contact-messages/" class="assan-contact">
+                    {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="row">
+                                        <div class="col-sm-12 margin-b-20">
+                                            <input type="text" name="name" class="form-control" placeholder="Full Name...." />
+                                        </div>
+                                        <div class="col-sm-12 margin-b-20">
+                                            <input type="text" name="email" class="form-control" placeholder="Email Address...." />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <textarea name="message" class="form-control margin-b-20" rows="5" placeholder="Message...."></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3 text-center">
+                                    <div class="data-status animated fadeInDown"></div> <!-- data submit status -->
+                                </div>
+                            </div>
+                            <script src="https://www.google.com/recaptcha/api.js"></script>
+                            <div class="g-recaptcha" data-sitekey="6Ldjl48UAAAAAEzZGzWCtkdAgCSiJhNBtmGGeP1j"></div>
+                            <div class="space-20"></div>
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" name="submit" class="btn btn-lg btn-skin btn-radius margin-b-20">Послать сообщение </button>
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
