@@ -11,3 +11,7 @@ templates/themes_markup/*
 */migrations/*
 .git-old/
 channels_panel/
+<<<<<<< HEAD
+=======
+myvenv/
+>>>>>>> origin/master

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/home/wangalex/Desktop/langing-page-master/myvenv/bin/python3
+=======
+#!/home/wangalex/Desktop/landing-master/myvenv/bin/python3
+>>>>>>> origin/master
 # -*- coding: utf-8 -*-
 import re
 import sys

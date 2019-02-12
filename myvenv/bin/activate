@@ -37,7 +37,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 VIRTUAL_ENV="/home/wangalex/Desktop/langing-page-master/myvenv"
+=======
+VIRTUAL_ENV="/home/wangalex/Desktop/landing-master/myvenv"
+>>>>>>> origin/master
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
