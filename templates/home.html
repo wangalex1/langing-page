@@ -47,18 +47,15 @@
         </header><!--navigation end here-->
  <section id="home" class="banner-intro banner-slider">
             <div class="banner-inner">
-                 {% for slide in context.background %}
+                {% for slide in context.background %}
                                    {% for file in slide.background.all %}
                                        <img class="mySlides w3-animate-fading" src="{{ file.file.url }}" style="width:100%; height: 600px;">
                                      {% endfor %}
                             {% endfor %}
                 <div class="container">
                     <div class="row">
-                       <div class="col-sm-8 text-center wow animated bounceIn">
 
 
-
-                        </div>
                     </div>
                 </div>
             </div>
