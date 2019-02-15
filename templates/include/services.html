@@ -5,7 +5,7 @@
              <div class="container">
                 <div class="row">
                     {% for post in context.service_post %}
-                    <div class="col-sm-10 col-sm-offset-2 center-title">
+                    <div class="col-sm-10 col-sm-offset-1 center-title">
                         <i class="icon-bike"></i>
                         <h3>{{ post.title }}</h3>
                         <p>{{ post.text_post }}</p>
@@ -15,11 +15,11 @@
              </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
+                    <div class="col-sm-12">
                         <ul class="list-inline text-center tabs-navigation" role="tablist">
                             {% for service in context.services %}
                             <li role="presentation" {% if service.index == 1 %}class="active"{% endif %}>
-                                <a href="#{{ service.slug }}" aria-controls="{{ service.slug }}" role="tab" data-toggle="tab"><span><i class="{{ service.icons }}"></i></span>{{ service.title }}</a>
+                                <a href="#{{ service.slug }}" aria-controls="{{ service.slug }}" role="tab" data-toggle="tab"><span><i class="{{ service.icons }}"></i></span>{{ service.title|safe }}</a>
                             </li>
                             {% endfor %}
 
@@ -36,7 +36,7 @@
                                          <img src="{% for file in context.service_1.image_service.all %}{{ PORTAL_URL }}{{ file.file.url }}" alt="{{ file.seo_alt }}" {% endfor %}class="img-responsive">
                                      </div>
                                      <div class="col-sm-5 col-sm-offset-1 text-left animated fadeInUp">
-                                         <h1>{{ context.service_1.title }}</h1>
+                                         <h1>{{ context.service_1.title|safe }}</h1>
                                          <p>
                                              {{ context.service_1.description }}
                                          </p>
@@ -46,7 +46,7 @@
                              <div role="tabpanel" class="tab-pane" id="responsive">
                                  <div class="row vertical-align-child">
                                     <div class="col-sm-5 col-sm-offset-1 text-left animated fadeInUp">
-                                         <h1>{{ context.service_2.title }}</h1>
+                                         <h1>{{ context.service_2.title|safe }}</h1>
                                          <p>
                                              {{ context.service_2.description }}
                                          </p>
@@ -63,7 +63,7 @@
                                          <img src="{% for file in context.service_3.image_service.all %}{{ PORTAL_URL }}{{ file.file.url }}" alt="{{ file.seo_alt }}" {% endfor %}class="img-responsive">
                                      </div>
                                      <div class="col-sm-5 col-sm-offset-1 text-left animated fadeInUp">
-                                         <h1>{{ context.service_3.title }}</h1>
+                                         <h1>{{ context.service_3.title|safe }}</h1>
                                          <p>
                                              {{ context.service_3.description }}
                                          </p>
